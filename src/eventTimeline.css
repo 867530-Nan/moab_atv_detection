@@ -1,0 +1,4 @@
+.hoverableItem:hover {
+  background: rgb(184, 184, 255);
+  cursor: pointer;
+}
