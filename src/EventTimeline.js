@@ -31,29 +31,29 @@ const EventTimeline = ({timelineInfo, timelineClick}) => {
   const classes = useStyles();
 
   return(
-      <Timeline align="alternate" style={{height: '500px',overflowY: 'scroll'}}>
+      <Timeline align="alternate" style={{height: '100%',overflowY: 'scroll'}}>
         {Object.keys(timelineInfo).map( (timelineDate, i) => {
           const values = Object.values(timelineInfo[timelineDate])
           return (
             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-            <h1 style={{margin: 0}}>{moment(timelineDate).format("MMMM DD")}</h1>
+            <h1 style={{margin: 0, fontWeight: 300}}>{moment(timelineDate).format("MMMM DD")}</h1>
             {values.map( (single,i) => {
                 return (
-                  <div className='hoverableItem' style={{width: '100%', background: currentItem === single.videoId ? '#d2ffb8': undefined}} key={single.videoId} onClick={()=>handleTimelineClick(single)}>
+                  <div className='hoverableItem' style={{width: '100%', background: currentItem === single.videoId ? '#76ff3e': undefined}} key={single.videoId} onClick={()=>handleTimelineClick(single)}>
                   <TimelineItem style={{display: "flex", alignItems: "center"}}>
                     <TimelineOppositeContent>
-                      <Typography variant="body2" color="textSecondary">
+                      <Typography variant="body1" color="black" style={{fontWeight: 500}}>
                         {single.date.split(",")[0]}
                       </Typography>
                     </TimelineOppositeContent>
                     <TimelineSeparator>
-                      <TimelineDot>
+                      <TimelineDot color="secondary">
                         <EmojiTransportationIcon />
                       </TimelineDot>
                       <TimelineConnector />
                     </TimelineSeparator>
                     <TimelineContent>
-                      <Paper elevation={currentItem === single.videoId ? 5 : 1} className={classes.paper}>
+                      <Paper elevation={3} className={classes.paper}>
                         <Typography>{single.vehicleCount} Vehicles Detected</Typography>
                       </Paper>
                     </TimelineContent>
@@ -61,7 +61,7 @@ const EventTimeline = ({timelineInfo, timelineClick}) => {
                 </div>
               )
             })}
-            <hr style={{width: '100%', background: 'black'}}/>
+            <hr style={{width: '50%', background: 'black'}}/>
             </div>
           )
         })}

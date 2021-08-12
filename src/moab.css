@@ -1,36 +1,29 @@
-
-.background {
-  padding: 50px;
+@-webkit-keyframes svg-text-anim {
+  40% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+  60% {
+    stroke-dashoffset: 0;
+    fill: rgb(107, 241, 111);
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #ff6700;
+  }
 }
-/* Google chrome */
-      @-webkit-keyframes svg-text-anim {
-       40% {
-          stroke-dashoffset: 0;
-          fill: transparent;
-        }
-        60% {
-          stroke-dashoffset: 0;
-          fill: rgb(107, 241, 111);
-        }
-        100% {
-          stroke-dashoffset: 0;
-          fill: #f26400;
-        }
-        
-    }
-    /* Most browsers */
-    @keyframes svg-text-anim {
-       40% {
-          stroke-dashoffset: 0;
-          fill: transparent;
-        }
-        60% {
-          stroke-dashoffset: 0;
-          fill: rgb(107, 241, 111);
-        }
-        100% {
-          stroke-dashoffset: 0;
-          fill: #f26400;
-        }
-        
-    }
+
+@keyframes svg-text-anim {
+  40% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+  60% {
+    stroke-dashoffset: 0;
+    fill: rgb(107, 241, 111);
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #ff6700;
+  }
+}

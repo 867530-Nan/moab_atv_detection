@@ -6,8 +6,6 @@ import 'react-dates/lib/css/_datepicker.css'
 const DateRange = (props) => {
   const [datePickerFocus,setDatePickerFocus] = React.useState(false)
   const onDatePickerfocus = (focused) => {
-    console.log('focused')
-    console.log(focused)
     setDatePickerFocus(focused)
   }
 
@@ -15,6 +13,7 @@ const DateRange = (props) => {
     <div style={{display: "flex",flexDirection: "column",justifyContent: "center",alignItems: "center"}}>
       <h2>Select Date Range</h2>
       <DateRangePicker
+        isOutsideRange={() => false}
         startDate={props.startDate} // momentPropTypes.momentObj or null,
         startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
         endDate={props.endDate} // momentPropTypes.momentObj or null,

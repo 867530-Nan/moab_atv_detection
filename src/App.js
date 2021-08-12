@@ -6,6 +6,7 @@ import DetectionsHeader from './DetectionsHeader'
 import moment from 'moment'
 import EventTimeline from './EventTimeline'
 import VideoPlayer from './VideoPlayer'
+import Footer from './Footer'
 
 function App() {
   const [startDate,setStartDate] = React.useState(moment())
@@ -79,6 +80,7 @@ function App() {
     },
     
   ]})
+
   const dateChange = ({startDate,endDate}) => {
     setStartDate(startDate)
     setEndDate(endDate)
@@ -96,23 +98,50 @@ function App() {
     }
     return acc
   }, {})
+
   return (
+    <div>
+
     <div className="background">
       <MoabAnimation />
       <DateRange dateChange={dateChange} startDate={startDate} endDate={endDate} />
-      <hr style={{width: '100%', background: 'black', marginTop: 50}}/>
+      {/* <hr style={{height: 1, width: '50%', background: 'black', marginTop: 50}}/> */}
       <DetectionsHeader detectionInfo={response.allDetections.length}/>
-      <div style={{display: 'flex', width: '100%'}}>
+      <div style={{display: 'flex', width: '100%', height: 600}}>
         <div style={{width: "50%", display: 'flex', flexDirection: 'column'}}>
-            <h1 style={{textAlign: "center", fontSize: 50, margin: '0', textDecoration: 'underline'}}>Timeline</h1>
+            <h1 
+              style={{
+                textAlign: "center", 
+                fontSize: 50, 
+                margin: '0', 
+                textDecoration: 'underline', 
+                textDecorationThickness: 2, 
+                fontWeight: 300
+              }}
+            >
+              Timeline
+            </h1>
           <EventTimeline timelineInfo={sorted} timelineClick={timelineClick}/>
         </div>
         <div style={{width: 1, height: '100%', background: 'black'}}/>
         <div style={{width: "50%", display: 'flex', flexDirection: 'column'}}>
-            <h1 style={{textAlign: "center", fontSize: 50, margin: '0', textDecoration: 'underline'}}>Video Player</h1>
+            <h1 
+              style={{
+                textAlign: "center", 
+                fontSize: 50, 
+                margin: '0', 
+                textDecoration: 'underline', 
+                textDecorationThickness: 2, 
+                fontWeight: 300
+              }}
+            >
+              Video Player
+            </h1>
           <VideoPlayer videoPlayerInfo={videoPlayerInfo}/>
         </div>
       </div>
+    </div>
+    <Footer />
     </div>
   );
 }
