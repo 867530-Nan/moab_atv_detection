@@ -35,7 +35,7 @@ const EventTimeline = ({timelineInfo, timelineClick}) => {
         {Object.keys(timelineInfo).map( (timelineDate, i) => {
           const values = Object.values(timelineInfo[timelineDate])
           return (
-            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <div key={timelineDate} style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
             <h1 style={{margin: 0, fontWeight: 300}}>{moment(timelineDate).format("MMMM DD")}</h1>
             {values.map( (single,i) => {
                 return (

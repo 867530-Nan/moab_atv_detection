@@ -84,6 +84,9 @@ function App() {
   const dateChange = ({startDate,endDate}) => {
     setStartDate(startDate)
     setEndDate(endDate)
+    // TODO format to UTC for API request
+    // startDate.utc().format()
+    // endDate.utc().format()
   }
   const timelineClick = (info) => {
     setVideoPlayerInfo(info)
