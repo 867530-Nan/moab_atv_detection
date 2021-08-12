@@ -8,10 +8,17 @@ import EventTimeline from './EventTimeline'
 import VideoPlayer from './VideoPlayer'
 import Footer from './Footer'
 
+// TODO format to UTC for API request
+// startDate.utc().format()
+// endDate.utc().format()
+
+// TODO pass videoMP4 from request to VideoPlayer
+
 function App() {
   const [startDate,setStartDate] = React.useState(moment())
   const [endDate,setEndDate] = React.useState(moment())
   const [videoPlayerInfo, setVideoPlayerInfo] = React.useState(null)
+  // const [videoMP4, setVideoMP4] = React.useState(null)
   const [response, setResponse] = React.useState({allDetections: [
     {
       date: moment.utc(new Date(Date.UTC(96, 7, 1, 4, 4, 5))).format("LT, L"),
@@ -84,9 +91,6 @@ function App() {
   const dateChange = ({startDate,endDate}) => {
     setStartDate(startDate)
     setEndDate(endDate)
-    // TODO format to UTC for API request
-    // startDate.utc().format()
-    // endDate.utc().format()
   }
   const timelineClick = (info) => {
     setVideoPlayerInfo(info)
